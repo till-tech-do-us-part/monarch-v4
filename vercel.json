@@ -2,7 +2,19 @@
   "version": 2,
   "public": true,
   "github": {
-    "enabled": false
+    "enabled": true,
+    "autoAlias": true
   },
-  "rewrites": []
+  "rewrites": [],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
 }
